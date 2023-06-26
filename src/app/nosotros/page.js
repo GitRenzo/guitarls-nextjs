@@ -1,11 +1,8 @@
-import Link from "next/link"
+import React from 'react'
 
-function Nosotros() {
+const Nosotros = () => {
   return (
-    <div>
-        <h1>Nosotros page</h1>
-        <Link  href="/">Home</Link>
-    </div>
+    <div>Nosotros</div>
   )
 }
 

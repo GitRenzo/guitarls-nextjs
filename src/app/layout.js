@@ -4,8 +4,7 @@ import Head from 'next/head'
 
 import Header from '../../components/header.jsx'
 import Footer from '../../components/footer.jsx'
-
-const inter = Inter({ subsets: ['latin'] })
+import { outfit } from './utils/fonts'
 
 export const metadata = {
   title: 'GuitarLA - NextJS',
@@ -18,7 +17,7 @@ export default function RootLayout({ children }) {
       <Head>
         <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
       </Head>
-      <body className={inter.className}>
+      <body className={outfit.className}>
         <Header />
         {children}
         <Footer />
