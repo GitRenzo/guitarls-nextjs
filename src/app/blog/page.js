@@ -3,6 +3,8 @@ export const metadata = {
     description: 'GuitarLA, Nosotros, Venta de guitarras',
   }
 
+import React from 'react'
+
 function Blog() {
   return (
     <div>Blog</div>

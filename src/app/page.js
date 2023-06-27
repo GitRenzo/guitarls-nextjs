@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { outfit } from './utils/fonts'
+import { outfit } from '../../utils/fonts'
 
 
 export default function Home() {
