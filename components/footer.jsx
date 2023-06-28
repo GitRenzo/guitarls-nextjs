@@ -7,15 +7,15 @@ import styles from "../src/app/footer.module.css"
 function Footer() {
   const pathname = usePathname()
   return (
-    <footer>
-      <div className="contenedor">
+    <footer className={styles.footer}>
+      <div className={`contenedor ${styles.contenido}`}>
         <nav className={styles.navegacion}>
           <Link href="/" className={pathname === "/" ? styles.active : ''}>
             Inicio
           </Link>
 
           <Link href="/nosotros" className={pathname === "/nosotros" ? styles.active : ''}>
-            Nosotros
+            Nosotros 
           </Link>
           <Link href="/blog" className={pathname === "/blog" ? styles.active : ''}>
             Blog
@@ -24,7 +24,7 @@ function Footer() {
             Tienda
           </Link>
         </nav>
-        <p>Todos los derechos reservados {new Date().getFullYear()}</p>
+        <p className={styles.copyright}>Todos los derechos reservados {new Date().getFullYear()}</p>
       </div>
     </footer>
   )
