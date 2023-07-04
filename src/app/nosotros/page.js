@@ -9,7 +9,7 @@ export const metadata = {
 const Nosotros = () => {
   return (
     <main className='Contenedor'>
-      <h2 className='heading'>Nosotros</h2>
+      <h1 className='heading'>Nosotros</h1>
 
       <div className={styles.contenido}>
         <Image src="/img/nosotros.jpg" alt="Imagen sobre nosotros" width={1000} height={800} />
