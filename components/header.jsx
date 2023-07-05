@@ -9,7 +9,6 @@ import styles from "../src/app/header.module.css"
 function Header() {
 
   const pathname = usePathname()
-  console.log(pathname);
   return (
     <header className={styles.header}>
       <div className={`contenedor ${styles.barra}`}>
