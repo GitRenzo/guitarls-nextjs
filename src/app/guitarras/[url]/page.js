@@ -1,56 +1,38 @@
-// import React from 'react'
+import styles from "../../styles/guitarras.module.css"
+import Image from "next/image";
 
-// function Product({guitarra}) {
-//     // console.log(typeof guitarra);
-//     return (
-//         <div>
-//             {guitarra}
-//         </div>
-//     )
-// }
+export async function generateMetadata({ params }) {
+    const guitarNameUppercase = params.url.charAt(0).toUpperCase() + params.url.slice(1)
+    return {
+      title: `GuitarLA - ${guitarNameUppercase}`,
+    }
+  }
+   
+async function Producto({ params }) {
+    const guitarra = await getData(params.url)
+    const {nombre, descripcion, precio, publishedAt, image} = guitarra[0].attributes
 
-// export default Product
-
-// export async function getStaticProps({ query: { url } }) {
-//     // This is how the URL should look like
-//     // http://127.0.0.1:1337/api/guitars?filters[url]=vai&populate=image
-//     const respuesta = await fetch(`${process.env.API_URL}/guitars?filters[url]=${url}&populate=image`)
-//     console.log(`${process.env.API_URL}/guitars?filters[url]=${url}&populate=image`);
-//     const guitarra = await respuesta.json()
-//     return {
-//         props: {
-//             guitarra
-//         }
-//     }
-// }
-
-
-// posts will be populated at build time by getStaticProps()
-export default function Product({ posts }) {
-    console.log(posts);
     return (
-        <ul>
-            {/* {console.log(posts)}
-            {posts.map((post) => (
-                <li>{post.title}</li>
-            ))} */}
-        </ul>
+        <div className={styles.guitarra}>
+            <Image src={image.data.attributes.formats.medium.url} alt={``} width={600} height={400}/>
+            <div className={styles.contenido}>
+                <h3>{nombre}</h3>
+                <p className={styles.descripcion}>{descripcion}</p>
+                <p className={styles.precio}>${precio}</p>              
+            </div>
+        </div>
     )
 }
 
-// This function gets called at build time on server-side.
-// It won't be called on client-side, so you can even do
-// direct database queries.
-export async function getStaticProps() {
-    // const res = await fetch(`${process.env.API_URL}/posts?filters[url]=${url}&populate=image`)
-    const res = await fetch("https://api.publicapis.org/entries")
-    const posts = await res.json()
-    // By returning { props: { posts } }, the Blog component
-    // will receive `posts` as a prop at build time
-    return {
-        props: {
-            posts,
-        },
-    }
-}
+export default Producto
 
+
+async function getData(url) {
+    const res = await fetch(`${process.env.API_URL}/guitars?filters[url]=${url}&populate=image`)
+    if (!res.ok) {
+        throw new Error("Failed to fetch data")
+    }
+    const guitarra = await res.json()
+
+    return guitarra.data
+}

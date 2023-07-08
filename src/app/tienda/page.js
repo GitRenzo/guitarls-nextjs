@@ -1,5 +1,5 @@
 import Guitarra from "../../../components/guitarra"
-import styles from "../grid.module.css"
+import styles from "../styles/grid.module.css"
 
 export const metadata = {
   title: 'GuitarLA - Tienda',

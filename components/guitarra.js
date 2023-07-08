@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import styles from "../src/app/guitarras.module.css"
+import styles from "../src/app/styles/guitarras.module.css"
 
 function Guitarra({ guitarra }) {
   const { nombre, descripcion, precio, image, url } = guitarra

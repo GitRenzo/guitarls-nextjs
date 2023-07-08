@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-import styles from "../src/app/footer.module.css"
+import styles from "../src/app/styles/footer.module.css"
 
 function Footer() {
   const pathname = usePathname()

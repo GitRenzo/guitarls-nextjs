@@ -10,6 +10,9 @@ import { outfit } from '../../utils/fonts'
 export const metadata = {
   title: 'GuitarLA - NextJS',
   description: 'Blog de musica, guitarras, tienda online',
+  icons: {
+    icon: "./favicon.ico",
+  },
 }
 
 export default function RootLayout({ children }) {

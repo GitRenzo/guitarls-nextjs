@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 
-import styles from "../src/app/header.module.css"
+import styles from "../src/app/styles/header.module.css"
 
 function Header() {
 
