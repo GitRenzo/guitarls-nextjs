@@ -7,13 +7,13 @@ export const metadata = {
 }
 
 export default async function Tienda() {
-  const guitarrasData = await getGuitars()
+  const guitarras = await getGuitars()
   return (
     <main className="contenedor">
       <h1 className="heading">Nuestra coleccion</h1>
       <div className={styles.grid}>
         {
-          guitarrasData?.data.map(guitarra => (
+          guitarras?.data.map(guitarra => (
             <Guitarra
               key={guitarra.id}
               guitarra={guitarra.attributes}
