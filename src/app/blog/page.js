@@ -30,7 +30,7 @@ export default Blog
 
 
 async function getPosts() {
-  const respuesta = await fetch("http://127.0.0.1:1337/api/posts?populate=imagen")
+  const respuesta = await fetch(`${process.env.API_URL}/posts?populate=imagen`)
   const data = await respuesta.json()
   return data.data
 }

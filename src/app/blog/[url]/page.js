@@ -1,7 +1,6 @@
 import Image from "next/image"
 import { formatearFecha } from "../../../../utils/helpers";
 import styles from "../../styles/blog.module.css"
-import classNames from "classnames";
 
 async function PostBlog({ params }) {
     const post = await getPost(params.url)
@@ -23,7 +22,6 @@ export default PostBlog
 
 
 async function getPost(url) {
-    // http://127.0.0.1:1337/api/posts?filters[url]=como-elegir-tu-proxima-guitarra&populate=imagen
     const respuesta = await fetch(`${process.env.API_URL}/posts?filters[url]=${url}&populate=imagen`)
     const post = await respuesta.json()
     return post.data
